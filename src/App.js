@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import { Switch, Route } from 'react-router-dom';
+import ImportPage from "./panels/ImportPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save пшеto reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [jsonTable, setJsonTable] = useState();
+
+    return (
+        <Switch>
+            <Route exact path="/" render={() => <ImportPage setJsonTable={setJsonTable} />} />
+        </Switch>
+    );
 }
 
 export default App;
