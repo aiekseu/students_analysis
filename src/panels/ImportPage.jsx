@@ -43,7 +43,8 @@ const ImportPage = ({setJsonTable}) => {
                                         fileReader.onload = (event)=>{
                                             let data = event.target.result;
                                             let workbook = XLSX.read(data, {type: "binary"});
-                                            console.log(workbook);
+                                            let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[workbook.SheetNames[0]]);
+                                            console.log(rowObject);
                                         }
                                     }
                                 }}>
