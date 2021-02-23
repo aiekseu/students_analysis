@@ -1,10 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import {Button, Grid, Typography} from "@material-ui/core";
 import XLSX from 'xlsx';
 
 const ImportPage = ({setJsonTable}) => {
 
     let uploadedFile;
+    const history = useHistory();
 
     return (
         <div style={{marginTop: '24px'}}>
@@ -44,7 +46,9 @@ const ImportPage = ({setJsonTable}) => {
                                             let data = event.target.result;
                                             let workbook = XLSX.read(data, {type: "binary"});
                                             let rowObject = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[workbook.SheetNames[0]]);
+                                            setJsonTable(rowObject)
                                             console.log(rowObject);
+                                            history.push('/result')
                                         }
                                     }
                                 }}>
