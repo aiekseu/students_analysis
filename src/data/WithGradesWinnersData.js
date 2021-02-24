@@ -1,6 +1,5 @@
-export default class Data {
+export default class WithGradesWinnersData {
     constructor() {
-        this.general_psrticipants = 0
         this.grade_8_participants = { //участники из 8 класса
             undefined: 0, // без диплома
             '1': 0, // диплом первой степени

@@ -21,11 +21,11 @@ const WinnersPercentageChart = ({participantsData}) => {
 
     changeChartData()
     return (
-        <div style={{textAlign: 'center'}}>
+        <div style={{textAlign: 'center', marginTop: '24px'}}>
             <Grid container direction='column'>
                 <Grid item>
                     <Typography variant='h6'>
-                        Распределение мест по классам учащихся
+                        Кол-во призовых мест среду учащихся __ класса
                     </Typography>
                     <Typography variant='body2' color='textSecondary'>
                         Класс
